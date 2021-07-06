@@ -50,6 +50,8 @@ function createWindow() {
         }
     });
 
+    mainWindow.setMenu(null)
+    mainWindow.setAutoHideMenuBar(true)
     mainWindow.maximize();
     mainWindow.show();
 
