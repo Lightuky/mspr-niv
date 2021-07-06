@@ -1,22 +1,16 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Accueil</router-link>
+      <router-link to="/calculator">Calculatrice</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 <script>
-const electron = window.require("electron")
 export default {
-  mounted: function () {
-    electron.ipcRenderer.on('goToHome', () => {
-      this.$router.push({name: 'home'});
-    });
-    electron.ipcRenderer.on('goToAbout', () => {
-      this.$router.push({name: 'about'});
-    });
+  mounted () {
+    this.$router.push({ name: 'Home'});
   }
 }
 </script>

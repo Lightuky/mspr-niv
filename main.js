@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow} = require('electron');
 
 const url = require("url");
 const path = require("path");
@@ -7,36 +7,6 @@ const iconPath = process.platform !== 'darwin'
     : 'src/assets/icons/favicon.icns';
 
 let mainWindow;
-
-function createMenu() {
-
-    const menu = Menu.buildFromTemplate([
-        {
-            label: 'Menu',
-            submenu: [
-                {
-                    label: 'Home',
-                    click() {
-                        mainWindow.webContents.send('goToHome');
-                    }
-                },
-                {
-                    label: 'About',
-                    click() {
-                        mainWindow.webContents.send('goToAbout');
-                    }
-                },
-                {
-                    label: 'Exit',
-                    click() {
-                        app.quit()
-                    }
-                }
-            ]
-        }
-    ]);
-    Menu.setApplicationMenu(menu);
-}
 
 function createWindow() {
 
@@ -63,8 +33,6 @@ function createWindow() {
         })
     );
     mainWindow.webContents.openDevTools()
-
-    createMenu();
 
     mainWindow.on('closed', function () {
         mainWindow = null
