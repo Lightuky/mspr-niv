@@ -6,14 +6,16 @@
   "author": "WIS Nantes",
   "private": true,
   "scripts": {
-    "start" : "vue-cli-service build && electron .",
+    "start": "vue-cli-service build && electron .",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0",
+    "vue": "^3.1.4",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
