@@ -1,14 +1,20 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Accueil</router-link>
-      <router-link to="/calculator">Calculatrice</router-link>
+  <div id="app" class="vh-100">
+    <div class="row h-100 m-0">
+      <div class="col-2 p-0 d-flex flex-column">
+        <router-link to="/" class="nav-link h3 py-1 my-5 text-white">Accueil</router-link>
+        <router-link to="/calculator" class="nav-link h3 py-1 my-5 text-white">Calculatrice</router-link>
+      </div>
+      <div class="col-10 p-0">
+        <router-view/>
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 <script>
+import data from '@/assets/json/data.json'
 export default {
+  meds: data,
   mounted () {
     this.$router.push({ name: 'Home'});
   }
@@ -23,16 +29,21 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+#app .col-2 {
+  background-color: #0596DE;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+#app .col-10 {
+  background-color: #E5E5E5;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#app .col-2 .nav-link:hover {
+  color: #8cefff!important;
 }
+
+#app .router-link-active {
+  font-weight: bolder;
+  color: #8cefff!important;
+}
+
 </style>
